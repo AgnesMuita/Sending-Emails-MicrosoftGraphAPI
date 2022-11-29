@@ -34,3 +34,24 @@ access_token = generate_access_token(app_id=APP_ID, scopes=SCOPES)
 
 headers={'Authorization':'Bearer' + access_token}
 
+requests_body = { 
+  'message':{
+    'toRecipients':[
+      {
+        'emailAddress':{
+          'address':'wamwithamuita1996@outlook.com'
+        }
+      }
+    ],
+    'subject':'Email here',
+    'importance':'normal',
+    'body':{
+      'contentType':'HTML',
+      'content':'<b>Ne Awesome</b>'
+    },
+    'attachments':[
+      draft_attachment('Document 1-converteds.pdf')
+    ]
+  }
+}   
+
