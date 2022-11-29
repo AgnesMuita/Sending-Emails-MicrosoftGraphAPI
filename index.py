@@ -24,6 +24,8 @@ SCOPES=['Mail.Send', 'Mail.ReadWrite']
 
 # for use with ConfidentialClientApplication
 client_secret = "b9aadc3a-4734-4449-a65e-6ae9c968eb3a"
+
+
 GRAPH_API_ENDPOINT = 'https://graph.microsoft.com/v1.0'
 endpoint = GRAPH_API_ENDPOINT+'/me'
 
@@ -31,8 +33,9 @@ endpoint = GRAPH_API_ENDPOINT+'/me'
 
 access_token = generate_access_token(app_id=APP_ID, scopes=SCOPES)
 
-
-headers={'Authorization':'Bearer' + access_token}
+access_token_id=access_token['access_token']
+headers={'Authorization':'Bearer' + access_token_id}
+# headers={'Authorization':'Bearer'+access_token}
 
 requests_body = { 
   'message':{
@@ -54,4 +57,10 @@ requests_body = {
     ]
   }
 }   
+print(headers)
+response=requests.post(endpoint, headers=headers, json=requests_body)
 
+if response.status_code==202:
+  print('Email sent')
+else:
+  print(response.reason)

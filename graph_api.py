@@ -25,10 +25,10 @@ def generate_access_token(app_id, scopes):
 
     accounts = client.get_accounts()
     if accounts:
-        # load the session
+        # load session
         token_response = client.acquire_token_silent(scopes, accounts[0])
     else:
-        # authetnicate your accoutn as usual
+        # authenticate account
         flow = client.initiate_device_flow(scopes=scopes)
         print('user_code: ' + flow['user_code'])
         webbrowser.open('https://microsoft.com/devicelogin')
