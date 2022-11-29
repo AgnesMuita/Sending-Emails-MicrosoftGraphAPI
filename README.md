@@ -1,11 +1,11 @@
-# send emails on Azure With GraphAPI
+# Send emails on Azure With GraphAPI
 
 ### Step 1:  Clone or download this repository
 
 From your shell or command line:
 
 ```Shell
-git clone https://github.com/Azure-Samples/ms-identity-python-devicecodeflow.git
+git clone https://github.com/AgnesMuita/emails-with-graph-api-on-azure.git
 ```
 
 ### Step 2:  Register the sample with your Azure Active Directory tenant
