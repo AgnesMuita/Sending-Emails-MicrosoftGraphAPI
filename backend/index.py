@@ -46,11 +46,11 @@ requests_body = {
         }
       }
     ],
-    'subject':'Email here',
+    'subject':'Greetings! Howdy! ',
     'importance':'normal',
     'body':{
       'contentType':'HTML',
-      'content':'<b>Ne Awesome</b>'
+      'content':'<b>Be Awesome. Regards, Aggie</b>'
     },
     'attachments':[
       draft_attachment('Document 1-converteds.pdf')
