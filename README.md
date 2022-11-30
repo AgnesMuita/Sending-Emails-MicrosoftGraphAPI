@@ -49,11 +49,7 @@ You'll need to install the dependencies using pip as follows:
 ```Shell
 pip install msal requests
 ```
-To utilize MSAL's PublicClientApplication approach, import the generate_access_token function from graph_api.py inside the index.py file and run
-```Shell
-python index.py
-```
-To utilize MSAL's ConfidentialClientApplication approach, import the generate_access_token function from graph.py inside the index.py file and run
+To utilize MSAL's ConfidentialClientApplication approach, run
 ```Shell
 python index.py
 ```
