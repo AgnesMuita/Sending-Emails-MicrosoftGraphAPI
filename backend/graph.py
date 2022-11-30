@@ -22,7 +22,8 @@ def generate_access_token(app_id,scopes):
   print(access_token)
   access_token_id=access_token['access_token']
   headers={'Authorization':'Bearer' + access_token_id}
-  # response=requests.get(endpoint, headers=headers)
+  response=requests.get(endpoint, headers=headers)
+  return response
 
   # with open('ms_graph_api_token.json', 'w') as _f:
   #   _f.write(access_token_cache.serialize())
