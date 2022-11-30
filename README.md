@@ -40,5 +40,8 @@ Some registration is required for Microsoft to act as an authority for your appl
    - In the *Commonly used Microsoft APIs* section, click on **Microsoft Graph**
    - In the **Delegated permissions** section, ensure that the right permissions are checked: **User.Read**. Use the search box if necessary.
    - Select the **Add permissions** button
+
+### Step 3: Use the application
+
    
    
