@@ -1,6 +1,6 @@
 # Send emails on Azure With GraphAPI
 
-React App for sending emails on Azure. Utilizes Python backend with the Microsoft Authentication Library(MSAL) that allows signing into Azure AD, registering an app, and obtaining tokens to call Microsoft Graph API to allow sending emails with attachments. 
+React Application where users can send emails using Microsoft's GraphAPI. Built on a Python backend with the Microsoft Authentication Library(MSAL) that allows signing into Azure AD, registering an app, and obtaining a token to call Microsoft Graph API that allows users to then send emails with attachments. 
 
 
 ### Step 1:  Clone or download this repository
@@ -8,7 +8,7 @@ React App for sending emails on Azure. Utilizes Python backend with the Microsof
 From your shell or command line:
 
 ```Shell
-git clone https://github.com/AgnesMuita/emails-with-graph-api-on-azure.git
+git clone https://github.com/AgnesMuita/Sending-Emails-MicrosoftGraphAPI.git
 ```
 
 ### Step 2:  Register the sample with your Azure Active Directory tenant
@@ -41,7 +41,11 @@ Some registration is required for Microsoft to act as an authority for your appl
    - In the **Delegated permissions** section, ensure that the right permissions are checked: **User.Read**. Use the search box if necessary.
    - Select the **Add permissions** button
 
-### Step 3: Use the application
+### Step 3: Setup the application
+Start the application using:
+```Shell
+npm start
+```
 
    
    
