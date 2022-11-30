@@ -8,7 +8,7 @@ React App for sending emails on Azure. Utilizes Python backend with the Microsof
 From your shell or command line:
 
 ```Shell
-git clone https://github.com/AgnesMuita/emails-with-graph-api-on-azure.git
+git clone https://github.com/AgnesMuita/Sending-Emails-MicrosoftGraphAPI.git
 ```
 
 ### Step 2:  Register the sample with your Azure Active Directory tenant
@@ -41,7 +41,14 @@ Some registration is required for Microsoft to act as an authority for your appl
    - In the **Delegated permissions** section, ensure that the right permissions are checked: **User.Read**. Use the search box if necessary.
    - Select the **Add permissions** button
 
-### Step 3: Use the application
+### Step 3: Setup the application
+Open the application on VSCode and :
+```Shell
+cd frontend
+```
+```Shell
+npm start
+```
 
    
    
