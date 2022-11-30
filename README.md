@@ -1,5 +1,8 @@
 # Send emails on Azure With GraphAPI
 
+Sample scripts for sending emails on Outlook using Azure. Utilizes the Microsoft Authentication Library(MSAL) that allows signing into Azure AD, registering an app, and obtaining tokens to call Microsoft Graph API to allow sending emails with attachments. 
+
+
 ### Step 1:  Clone or download this repository
 
 From your shell or command line:
@@ -46,3 +49,16 @@ You'll need to install the dependencies using pip as follows:
 ```Shell
 pip install msal requests
 ```
+To utilize MSAL's PublicClientApplication approach, import the generate_access_token function from graph_api.py inside the index.py file and run
+```Shell
+python index.py
+```
+To utilize MSAL's ConfidentialClientApplication approach, import the generate_access_token function from graph.py inside the index.py file and run
+```Shell
+python index.py
+```
+This will open a browser tab. Use the code printed on the terminal for authentication. 
+<img width="616" alt="image" src="https://user-images.githubusercontent.com/67423874/204729146-b5973c57-2970-4af4-991d-77955cbb71c0.png">
+
+
+On authentication, it will be possible to the email. 
