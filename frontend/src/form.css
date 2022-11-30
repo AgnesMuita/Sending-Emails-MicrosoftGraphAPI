@@ -41,9 +41,9 @@ body {
 }
 
 /*Hide all except first fieldset*/
-#msform fieldset:not(:first-of-type) {
+/* #msform fieldset:not(:first-of-type) {
   display: none;
-}
+} */
 
 /*inputs*/
 #msform input,
@@ -92,7 +92,7 @@ body {
 
 #msform .action-button-previous {
   width: 100px;
-  background: #C5C5F1;
+  background: pink;
   font-weight: bold;
   color: white;
   border: 0 none;
@@ -191,10 +191,10 @@ body {
 }
 
 .dme_link a {
-  background: #FFF;
   font-weight: bold;
   color: orange;
-  border: 0 none;
+  border: 0 none;   
+  text-decoration: none;
   border-radius: 25px;
   cursor: pointer;
   padding: 5px 25px;
@@ -203,6 +203,7 @@ body {
 
 .dme_link a:hover,
 .dme_link a:focus {
-  background: #C5C5F1;
+  background: orange;
+  color:teal;
   text-decoration: none;
 }
