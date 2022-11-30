@@ -49,12 +49,16 @@ You'll need to install the dependencies using pip as follows:
 ```Shell
 pip install msal requests
 ```
-To utilize MSAL's ConfidentialClientApplication approach, run
+Start the application, follow the instructions and use a browser to authenticate. The profile for the user you log in with will display in the console.
+
 ```Shell
 python index.py
 ```
-This will open a browser tab. Use the code printed on the terminal for authentication. 
-<img width="616" alt="image" src="https://user-images.githubusercontent.com/67423874/204729146-b5973c57-2970-4af4-991d-77955cbb71c0.png">
+If the sample fails to run or is outdated, you can try installing the version specific dependencies from requirements.txt.
 
+```Shell
+pip install -r requirements.txt
+```
 
-On authentication, it will be possible to the email. 
+If that doesn't fix the issue, ensure that your clientid, scope and endpoint values are correct.
+
