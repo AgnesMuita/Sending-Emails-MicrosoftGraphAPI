@@ -2,6 +2,7 @@ import os
 import base64
 import requests
 from graph_api import generate_access_token
+# from graph import generate_access_token
 
 
 def draft_attachment(file_path):
@@ -57,7 +58,6 @@ requests_body = {
     ]
   }
 }   
-print(headers)
 response=requests.post(endpoint, headers=headers, json=requests_body)
 
 if response.status_code==202:
