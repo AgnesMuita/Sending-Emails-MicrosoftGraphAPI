@@ -1,6 +1,6 @@
 # Send emails on Azure With GraphAPI
 
-Sample scripts for sending emails using Azure. Utilizes the Microsoft Authentication Library(MSAL) that allows signing into Azure AD, registering an app, and obtaining tokens to call Microsoft Graph API to allow sending emails with attachments. 
+Sample scripts for sending emails using Azure built using Python. Utilizes the Microsoft Authentication Library(MSAL) that allows signing into Azure AD, registering an app, and obtaining tokens to call Microsoft Graph API to allow sending emails with attachments. 
 
 
 ### Step 1:  Clone or download this repository
