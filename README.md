@@ -42,10 +42,7 @@ Some registration is required for Microsoft to act as an authority for your appl
    - Select the **Add permissions** button
 
 ### Step 3: Setup the application
-Open the application on VSCode and :
-```Shell
-cd frontend
-```
+Start the application using:
 ```Shell
 npm start
 ```
