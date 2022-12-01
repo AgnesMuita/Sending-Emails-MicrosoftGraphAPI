@@ -8,11 +8,11 @@ function Form() {
     const [configInfo, setConfigInfo]= useState({clientId:"", appId:"", sendersEmail:"", recipient:"", subject:"", message:""})
 
     // fetch data api
-    const url = "https://jsonplaceholder.typicode.com/posts"
+    const url = "http://localhost:5000"
     const getAllInfo=()=>{
       axios.get(`${url}`)
       .then((response)=>{
-        // console.log(response.data.title)
+        console.log(response)
       })
       .catch(error=>console.log(error))
     }
