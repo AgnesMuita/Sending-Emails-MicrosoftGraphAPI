@@ -5,7 +5,7 @@ import axios from "axios";
 
 function Form() {
     const[showPage, showSetPage] = useState(false);
-    const [configInfo, setConfigInfo]= useState({clientId:"", appId:"", sendersEmail:"", recipient:"", subject:"", message:""})
+    const [configInfo, setConfigInfo]= useState({appId:"", sendersEmail:"", recipient:"", subject:"", message:""})
 
     // fetch data api
     const url = "http://localhost:5000"
@@ -31,7 +31,7 @@ function Form() {
     //handle submit
     function handleSubmit(e){
       e.preventDefault()
-      const data = {clientId:configInfo.clientId, appId:configInfo.appId, sendersEmail:configInfo.sendersEmail,recipient:configInfo.recipient,subject:configInfo.subject, message:configInfo.message}
+      const data = {appId:configInfo.appId, sendersEmail:configInfo.sendersEmail,recipient:configInfo.recipient,subject:configInfo.subject, message:configInfo.message}
       console.log(data)
 
     }
@@ -47,7 +47,6 @@ function Form() {
               {showPage ?
                 <fieldset>
                   <h2 className="fs-title">Configurations</h2>
-                  <input type="text" name="ClientId" placeholder="Client Secret" onChange={e=>setConfigInfo({...configInfo,clientId:e.target.value})}/>
                   <input type="text" name="appID" placeholder="App Id" onChange={e=>setConfigInfo({...configInfo,appId:e.target.value})}/>
                   <input type="text" name="sendersemail" placeholder="Senders Email" onChange={e=>setConfigInfo({...configInfo,sendersEmail:e.target.value})}/>
                   {/* <input type="password" name="password" placeholder="Password"/> */}
