@@ -1,7 +1,11 @@
-import os
-from http.server import HTTPServer, CGIHTTPRequestHandler
+import os, sys
+from http.server import HTTPServer, CGIHTTPRequestHandler, SimpleHTTPRequestHandler, test
 
-os.chdir('.')
-# Create server object listening the port 80
-server_object = HTTPServer(server_address=('', 8000), RequestHandlerClass=CGIHTTPRequestHandler)
-server_object.serve_forever()
+
+class CORSRequestHandler (SimpleHTTPRequestHandler):
+    def end_headers (self):
+        self.send_header('Access-Control-Allow-Origin', '*')
+        SimpleHTTPRequestHandler.end_headers(self)
+
+if __name__ == '__main__':
+    test(CORSRequestHandler, HTTPServer, port=int(sys.argv[1]) if len(sys.argv) > 1 else 5000)
