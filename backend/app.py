@@ -1,12 +1,7 @@
-from gevent.pywsgi import WSGIServer
+import os
+from http.server import HTTPServer, CGIHTTPRequestHandler
 
-
-def app(environ, start_fn):
-  data = b"Hello, Web!\n"
-  start_fn('200 OK',[{'Content-Type', 'text/plain'}])
-  return iter([data])
-
-
-if __name__=="__main__":
-  print("serving on 8000...")
-  WSGIServer(('', 8000),app, spawn=None).serve_forever()
+os.chdir('.')
+# Create server object listening the port 80
+server_object = HTTPServer(server_address=('', 8000), RequestHandlerClass=CGIHTTPRequestHandler)
+server_object.serve_forever()
