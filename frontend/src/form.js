@@ -1,25 +1,12 @@
-import React,{useState, useEffect} from "react";
+import React,{useState} from "react";
 import axios from "axios";
 
 
 
 function Form() {
     const[showPage, showSetPage] = useState(false);
-    const [configInfo, setConfigInfo]= useState({appId:"", sendersEmail:"", recipient:"", subject:"", message:""})
+    const [configInfo, setConfigInfo]= useState({appId:"", sendersEmail:"",password:"", recipient:"", subject:"", message:""})
 
-    // fetch data api
-    const url = "http://localhost:5000"
-    const getAllInfo=()=>{
-      axios.get(`${url}`)
-      .then((response)=>{
-        console.log(response)
-      })
-      .catch(error=>console.log(error))
-    }
-    useEffect(()=>{
-      getAllInfo();
-    },[])
-    
     //previous and next buttons
     const handlePreviousPage=()=>{
         showSetPage(true)
@@ -29,17 +16,26 @@ function Form() {
     }
 
     //handle submit
-    function handleSubmit(e){
-      e.preventDefault()
-      const data = {appId:configInfo.appId, sendersEmail:configInfo.sendersEmail,recipient:configInfo.recipient,subject:configInfo.subject, message:configInfo.message}
-      console.log(data)
+    // function handleSubmit(e){
+      // e.preventDefault()
+      const data = {appId:configInfo.appId, sendersEmail:configInfo.sendersEmail,password:configInfo.password, recipient:configInfo.recipient,subject:configInfo.subject, message:configInfo.message}
+      axios.get('http://localhost:5000',data)
+        .then(res=>{
+          console.log(res)
+          setConfigInfo(res.data)
+          // alert("email sent successfully")
+        })  
+        .catch(err=>{
+          console.log(err)
+        })
 
-    }
+    // }
 
     return (
       <div className="row">
       <div className="col-md-6 col-md-offset-3">
-          <form id="msform" onSubmit={e=>{handleSubmit(e)}}>
+          {/* <form id="msform" onSubmit={e=>{handleSubmit(e)}}> */}
+          <form id="msform">
               <ul id="progressbar">
                   <li className="active">Configurations</li>
                   <li>Compose Email</li>
@@ -49,7 +45,7 @@ function Form() {
                   <h2 className="fs-title">Configurations</h2>
                   <input type="text" name="appID" placeholder="App Id" onChange={e=>setConfigInfo({...configInfo,appId:e.target.value})}/>
                   <input type="text" name="sendersemail" placeholder="Senders Email" onChange={e=>setConfigInfo({...configInfo,sendersEmail:e.target.value})}/>
-                  {/* <input type="password" name="password" placeholder="Password"/> */}
+                  <input type="password" name="password" placeholder="Password" onChange={e=>setConfigInfo({...configInfo,password:e.target.value})}/>
                   <input type="button" name="next" className="next action-button" value="Next" onClick={handleNextPage}/>
               </fieldset>
               :

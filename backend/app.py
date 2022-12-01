@@ -1,5 +1,5 @@
 import sys
-from http.server import HTTPServer, CGIHTTPRequestHandler, SimpleHTTPRequestHandler, test
+from http.server import HTTPServer, SimpleHTTPRequestHandler, test
 from index import send_email
 
 class CORSRequestHandler (SimpleHTTPRequestHandler):
