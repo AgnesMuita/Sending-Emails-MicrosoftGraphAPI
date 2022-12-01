@@ -4,7 +4,6 @@ import json
 import os
 import msal
 
-GRAPH_API_ENDPOINT = 'https://graph.microsoft.com/v1.0'
 
 def generate_access_token(app_id, scopes):
     # Save Session Token as a token file
