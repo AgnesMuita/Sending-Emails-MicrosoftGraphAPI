@@ -17,6 +17,7 @@ def draft_attachment(file_path):
 
   return data_body
 
+
 requests_body = { 
   'message':{
     'toRecipients':[
