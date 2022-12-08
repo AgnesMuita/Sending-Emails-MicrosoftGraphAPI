@@ -1,3 +1,5 @@
 venv/
 ms_graph_api_token.json
 .pyc
+confidential.py
+.vercel
