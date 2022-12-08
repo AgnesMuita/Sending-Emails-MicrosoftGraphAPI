@@ -4,8 +4,10 @@ import axios from "axios";
 
 
 function Form() {
-    const[showPage, showSetPage] = useState(false);
+    const[showPage, showSetPage] = useState(true);
     const [configInfo, setConfigInfo]= useState({appId:"", sendersEmail:"",password:"", recipient:"", subject:"", message:""})
+
+
 
     //previous and next buttons
     const handlePreviousPage=()=>{
@@ -14,12 +16,14 @@ function Form() {
     const handleNextPage=()=>{
         showSetPage(false)
     }
-
+    
     //handle submit
-    // function handleSubmit(e){
-      // e.preventDefault()
+    function handleSubmit(e){
+      e.preventDefault()
       const data = {appId:configInfo.appId, sendersEmail:configInfo.sendersEmail,password:configInfo.password, recipient:configInfo.recipient,subject:configInfo.subject, message:configInfo.message}
-      axios.get('http://localhost:5000',data)
+      const header = new Headers();
+      header.append('Access-Control-Allow-Origin', '*');
+      axios.post('http://localhost:8000', data, header)
         .then(res=>{
           console.log(res)
           setConfigInfo(res.data)
@@ -29,13 +33,13 @@ function Form() {
           console.log(err)
         })
 
-    // }
+    }
 
     return (
       <div className="row">
       <div className="col-md-6 col-md-offset-3">
-          {/* <form id="msform" onSubmit={e=>{handleSubmit(e)}}> */}
-          <form id="msform">
+          <form id="msform" onSubmit={e=>{handleSubmit(e)}}>
+          {/* <form id="msform"> */}
               <ul id="progressbar">
                   <li className="active">Configurations</li>
                   <li>Compose Email</li>
